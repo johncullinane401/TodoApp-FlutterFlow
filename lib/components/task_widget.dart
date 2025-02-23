@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'task_model.dart';
 export 'task_model.dart';
@@ -52,7 +53,7 @@ class _TaskWidgetState extends State<TaskWidget> {
       highlightColor: Colors.transparent,
       onTap: () async {
         context.pushNamed(
-          'details',
+          DetailsWidget.routeName,
           queryParameters: {
             'taskDoc': serializeParam(
               widget.taskDoc,
@@ -74,13 +75,13 @@ class _TaskWidgetState extends State<TaskWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(12.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Theme(
                 data: ThemeData(
-                  checkboxTheme: const CheckboxThemeData(
+                  checkboxTheme: CheckboxThemeData(
                     visualDensity: VisualDensity.compact,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     shape: CircleBorder(),
